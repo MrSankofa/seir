@@ -1,0 +1,52 @@
+{
+  "name": "neighborhood-service",
+  "version": "1.0.0",
+  "description": "neighborhood service module",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon server/index.js",
+    "create": "nodemon model/postgresql/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hack-reactor-front-end-abrm/Neighborhood-Service.git"
+  },
+  "author": "Andrew Schuessler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hack-reactor-front-end-abrm/Neighborhood-Service/issues"
+  },
+  "homepage": "https://github.com/hack-reactor-front-end-abrm/Neighborhood-Service#readme",
+  "devDependencies": {
+    "babel-core": "^6.23.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "faker": "^4.1.0",
+    "jest": "^24.7.1",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "convert-array-to-csv": "^1.0.6",
+    "cors": "^2.8.5",
+    "csv-writer": "^1.2.0",
+    "express": "^4.16.4",
+    "google-map-react": "^1.1.2",
+    "nodemon": "^1.18.10",
+    "path": "^0.12.7",
+    "react": "^16.8.6",
+    "react-dialog": "^1.0.2",
+    "react-dom": "^16.8.6",
+    "sequelize": "^5.7.0",
+    "sqlite": "^3.0.3",
+    "sqlite3": "^4.0.6",
+    "supertest": "^4.0.2"
+  }
+}
