@@ -17,7 +17,7 @@ class Map extends React.Component {
     }
 
     render() {
-      
+        console.log('props in Map:', this.props);
         return (
           // Important! Always set the container height explicitly
           <div style={{ height: '50vh', width: '100%' }}>

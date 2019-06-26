@@ -8,17 +8,18 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const csvWriter = createCsvWriter({  
   path: 'updated.csv',
   header: [
-    {id: 'price', title: 'Price'},
-    {id: 'beds', title: 'Beds'},
-    {id: 'baths', title: 'Baths'},
+    {id: 'uniqueId', title: 'uniqueId'},
+    {id: 'price', title: 'price'},
+    {id: 'beds', title: 'beds'},
+    {id: 'baths', title: 'baths'},
     {id: 'sqft', title: 'sqft'},
-    {id: 'address', title: 'Address'},
-    {id: 'latitude', title: 'Latitude'},
-    {id: 'longitude', title: 'Longitude'},
+    {id: 'address', title: 'address'},
+    {id: 'latitude', title: 'latitude'},
+    {id: 'longitude', title: 'longitude'},
     {id: 'imgUrl', title: 'imgUrl'},
     {id: 'walkScore', title: 'walkScore'},
+    {id: 'zoomlevel', title: 'zoomlevel'},
     {id: 'transitScore', title: 'transitScore'},
-    {id: 'zoomLevel', title: 'zoomLevel'},
   ]
 });
 
@@ -27,7 +28,7 @@ let id = 0;
 var loop = function(popRawData) {
   count++
   id++;
-  if ( count >= 10000 ) {
+  if ( count >= 10001 ) {
     return
   } else {
     csvWriter  

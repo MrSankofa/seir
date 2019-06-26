@@ -8,7 +8,7 @@ var popRawData = function popRawData() {
   count = 0;
   for(var i = 0; i < 1000; i++) {
     const obj = {};
-  
+    obj.uniqueId = i;
     obj['price'] = andrew[count].price;
     obj.beds = andrew[count].beds;
     obj.baths = andrew[count].baths;
@@ -18,9 +18,11 @@ var popRawData = function popRawData() {
     obj.longitude = andrew[count].longitude;
     obj.imgUrl = andrew[count].imgUrl;
     obj.walkScore = andrew[count].walkScore;
+    obj.zoomlevel = Math.floor(Math.random() * 15) + 1;
     obj.transitScore = andrew[count].transitScore; 
-    obj.zoomLevel = Math.floor(Math.random() * 10) + 1
-
+    
+    
+    
     count += 1;
     if ( count === 99) {
       count = 0;

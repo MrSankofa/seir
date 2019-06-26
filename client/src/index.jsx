@@ -35,7 +35,7 @@ class NeighborhoodSection extends React.Component {
 
     changeCurrentProperty(propertyId) {
         for (var i = 0; i < this.state.properties.length; i++) {
-            if (this.state.properties[i].uniqueId === propertyId) {
+            if (this.state.properties[i].uniqueid === propertyId) {
                 this.setState({
                     currentProperty: this.state.properties[i]
                 })
