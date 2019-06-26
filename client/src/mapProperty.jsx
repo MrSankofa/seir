@@ -22,7 +22,7 @@ class MapProperty extends React.Component {
             return (
                 <div className="propertyMarkerContainer">
                     <div className="circle"></div>
-                    <button id={this.props.property.uniqueId} className="propertyMarkerPrice" onClick={(e) => this.props.changeCurrentProperty(Number(e.target.id))}>{'$' + (this.props.property.price / 1000).toFixed(0) + 'K'}</button>
+                    <button id={this.props.property.uniqueid} className="propertyMarkerPrice" onClick={(e) => this.props.changeCurrentProperty(Number(e.target.id))}>{'$' + (this.props.property.price / 1000).toFixed(0) + 'K'}</button>
                 </div>
             );
         }
