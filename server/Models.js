@@ -72,7 +72,7 @@ var psqlRetrieveAll = (req, res) => {
 
 var psqlRetrieveOne = (req, res) => {
     
-  var getOne = 'SELECT * FROM neighborhood WHERE uniqueid = ' + req.params.id;
+  var getOne = 'SELECT * FROM neighborhood WHERE \"uniqueId\" = ' + req.params.id;
 
   pool.query(getOne)
       .then((data) => {

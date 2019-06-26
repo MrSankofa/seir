@@ -18,21 +18,21 @@ const csvWriter = createCsvWriter({
     {id: 'longitude', title: 'longitude'},
     {id: 'imgUrl', title: 'imgUrl'},
     {id: 'walkScore', title: 'walkScore'},
-    {id: 'zoomlevel', title: 'zoomlevel'},
+    {id: 'zoomLevel', title: 'zoomLevel'},
     {id: 'transitScore', title: 'transitScore'},
   ]
 });
 
-var count = 0;
+var count = -1;
 let id = 0;
 var loop = function(popRawData) {
   count++
   id++;
-  if ( count >= 10001 ) {
+  if ( count > 10000 ) {
     return
   } else {
     csvWriter  
-      .writeRecords(popRawData())
+      .writeRecords(popRawData(count))
       .then(()=> { 
         loop(popRawData);
       });

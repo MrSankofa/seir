@@ -36,7 +36,7 @@ class NeighborhoodSection extends React.Component {
         console.log('propertyId when clicked: ', propertyId);
         
         for (var i = 0; i < this.state.properties.length; i++) {
-            if (this.state.properties[i].uniqueid === propertyId) {
+            if (this.state.properties[i].uniqueId === propertyId) {
                 this.setState({
                     currentProperty: this.state.properties[i]
                 })
