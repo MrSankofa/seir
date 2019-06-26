@@ -72,16 +72,16 @@ var psqlRetrieveAll = (req, res) => {
 
 var psqlRetrieveOne = (req, res) => {
     
-    var getOne = 'SELECT * FROM neighborhood WHERE id = ' + req.params.id;
+  var getOne = 'SELECT * FROM neighborhood WHERE uniqueid = ' + req.params.id;
 
-    pool.query(getOne)
-        .then((data) => {
-            res.send(data.rows)
-        })
-        .catch((err) => {
-            console.log(err);
-            pool.end();
-          }); 
+  pool.query(getOne)
+      .then((data) => {
+          res.send(data.rows)
+      })
+      .catch((err) => {
+          console.log(err);
+          pool.end();
+        }); 
 }
 
 module.exports.psqlOnChange = psqlOnChange;
