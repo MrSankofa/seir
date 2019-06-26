@@ -9,10 +9,10 @@ class MapProperty extends React.Component {
 
     render() {
         if (this.props.property.uniqueId === this.props.currentProperty.uniqueId) {
-            console.log('MapProperty Props: ', this.props)
+            // console.log('MapProperty Props: ', this.props)
             return (
                 <div className="propertyMarkerContainer">
-                    <img onClick={() => window.location.pathname = '/' + this.props.currentProperty.uniqueId} className="currentPropMapMarkerImg" border="5" src={this.props.property.imgurl}></img>
+                    <img onClick={() => window.location.pathname = '/items/' + this.props.currentProperty.uniqueid} className="currentPropMapMarkerImg" border="5" src={this.props.property.imgurl}></img>
                     <div className="circle"></div>
                     <button className="propertyMarkerPrice">{'$' + (this.props.property.price / 1000).toFixed(0) + 'K'}</button>
                 </div>

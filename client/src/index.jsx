@@ -24,7 +24,6 @@ class NeighborhoodSection extends React.Component {
     }
 
     getProperties() {
-        console.log('this.state.properties: ', this.state.properties)
         Axios.get('/items')
         .then(response => this.setState({
             properties: response.data,
@@ -34,6 +33,8 @@ class NeighborhoodSection extends React.Component {
     }
 
     changeCurrentProperty(propertyId) {
+        console.log('propertyId when clicked: ', propertyId);
+        
         for (var i = 0; i < this.state.properties.length; i++) {
             if (this.state.properties[i].uniqueid === propertyId) {
                 this.setState({
