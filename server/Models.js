@@ -1,29 +1,19 @@
+require('dotenv').config();
 const sqlite3 = require('sqlite3').verbose();
 const pg = require('pg');
+
+const DATABASE = process.env.DATABASE || 'seir';
+const PASSWORD = process.env.PASSWORD || 'root';
 
 // development
 const config = {
     user: 'postgres', //this is the db user credential
-    database: 'seir',
-    password: 'root',
+    database: DATABASE,
+    password: PASSWORD,
     port: 5432,
     max: 10, // max number of clients in the pool
     idleTimeoutMillis: 30000,
 };
-// var awsDB = 'ec2-35-175-139-77.compute-1.amazonaws.com';
-
-// production
-// const config = {
-//     user: 'postgres', //this is the db user credential
-//     host: awsDB,
-//     database: 'zillow',
-//     password: 'postgres',
-//     port: 5432,
-//     max: 10, // max number of clients in the pool
-//     idleTimeoutMillis: 30000,
-// };
-
-// var awsTable = 'properties'
 
 var awsTable = 'neighborhood'
 
@@ -61,7 +51,7 @@ var psqlRetrieveAll = (req, res) => {
     
     pool.query(getEverything)
     .then((data) => {
-        console.log('data.rows: ', data.rows);
+        // console.log('data.rows: ', data.rows);
         res.send(data.rows)
     })
     .catch((err) => {
