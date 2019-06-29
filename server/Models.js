@@ -8,8 +8,8 @@ const PASSWORD = process.env.PASSWORD || 'root';
 // development
 const config = {
     user: 'postgres', //this is the db user credential
-    database: DATABASE,
-    password: PASSWORD,
+    database: 'seir',
+    password: 'root',
     port: 5432,
     max: 10, // max number of clients in the pool
     idleTimeoutMillis: 30000,
@@ -39,24 +39,25 @@ var psqlOnChange = (req, res, bounds) => {
   pool.query(query)
   .then((data) => {
     res.send(data.rows)
+    res.sendStatus(200)
   })
   .catch((err) => {
     console.log(err);
-    pool.end();
+    // pool.end();
   }); 
 }
 
 var psqlRetrieveAll = (req, res) => {
     var getEverything = `SELECT * FROM ${awsTable} limit 100`;
     
-    pool.query(getEverything)
+    return pool.query(getEverything)
     .then((data) => {
         // console.log('data.rows: ', data.rows);
-        res.send(data.rows)
+        res.status(200).send(data.rows)
     })
     .catch((err) => {
       console.log(err);
-      pool.end();
+      // pool.end();
     }); 
 }
 
@@ -66,11 +67,11 @@ var psqlRetrieveOne = (req, res) => {
 
   pool.query(getOne)
       .then((data) => {
-          res.send(data.rows)
+          res.status(200).send(data.rows)
       })
       .catch((err) => {
           console.log(err);
-          pool.end();
+          // pool.end();
         }); 
 }
 

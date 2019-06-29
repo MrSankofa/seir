@@ -12,11 +12,12 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
 app.get('/items', (req, res) => {
-    Models.psqlRetrieveAll(req, res);
+  Models.psqlRetrieveAll(req, res).then( () => {
+  }).catch( err => console.log(err))
 })
 
 app.get('/items/:id', (req, res) => {
-    Models.psqlRetrieveOne(req, res);
+  Models.psqlRetrieveOne(req, res);
 })
 
 
