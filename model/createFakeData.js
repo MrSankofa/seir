@@ -3,12 +3,13 @@ var andrew = require('../data/rawData');
 
 // console.log(andrew);
 
-var popRawData = function popRawData() {
+var popRawData = function popRawData(index) {
   const rawData = [];
   count = 0;
+  const j = index * 1000;
   for(var i = 0; i < 1000; i++) {
     const obj = {};
-    obj.uniqueId = i;
+    obj.uniqueId = i + j;
     obj['price'] = andrew[count].price;
     obj.beds = andrew[count].beds;
     obj.baths = andrew[count].baths;
@@ -18,7 +19,7 @@ var popRawData = function popRawData() {
     obj.longitude = andrew[count].longitude;
     obj.imgUrl = andrew[count].imgUrl;
     obj.walkScore = andrew[count].walkScore;
-    obj.zoomlevel = Math.floor(Math.random() * 15) + 1;
+    obj.zoomLevel = Math.floor(Math.random() * 15) + 1;
     obj.transitScore = andrew[count].transitScore; 
     
     

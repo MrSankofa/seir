@@ -12,7 +12,7 @@ class MapProperty extends React.Component {
             // console.log('MapProperty Props: ', this.props)
             return (
                 <div className="propertyMarkerContainer">
-                    <img onClick={() => window.location.pathname = '/items/' + this.props.currentProperty.uniqueid} className="currentPropMapMarkerImg" border="5" src={this.props.property.imgurl}></img>
+                    <img onClick={() => window.location.pathname = '/items/' + this.props.currentProperty.uniqueId} className="currentPropMapMarkerImg" border="5" src={this.props.property.imgUrl}></img>
                     <div className="circle"></div>
                     <button className="propertyMarkerPrice">{'$' + (this.props.property.price / 1000).toFixed(0) + 'K'}</button>
                 </div>

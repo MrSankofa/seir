@@ -1007,7 +1007,7 @@ var rawData = [
 var addUniqueId = () => {
     var id = 1;
     for (var i = 0; i < rawData.length; i++) {
-        rawData[i].uniqueId = id;
+        rawData[i]. = id;
         id += 1;
     }
 }
